@@ -4,7 +4,6 @@ import { Alert, Button, View, StyleSheet, SafeAreaView } from "react-native";
 
 export default function App() {
   return (
-<<<<<<< HEAD
     <SafeAreaView style={styles.container}>
       <Button
         title="hellso"
@@ -13,12 +12,6 @@ export default function App() {
       <GetLocation />
       <GetLocation />
     </SafeAreaView>
-=======
-    <View style={styles.container}>
-      <Text>Hello World!!!</Text>
-      <StatusBar style="auto" />
-    </View>
->>>>>>> 3e094870789b9f456f2e797d353902f18e92b41d
   );
 }
 const styles = StyleSheet.create({
