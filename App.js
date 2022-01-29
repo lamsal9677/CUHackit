@@ -1,19 +1,23 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import GetLocation from "./src/GetLocation";
+import React from "react";
+import { Alert, Button, View, StyleSheet, SafeAreaView } from "react-native";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <Button
+        title="hellso"
+        onPress={() => Alert.alert("Button with adjusted color pressed")}
+      />
+      <GetLocation />
+      <GetLocation />
+    </SafeAreaView>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: "#fff",
+    flex: 1,
     alignItems: "center",
     justifyContent: "center",
   },
