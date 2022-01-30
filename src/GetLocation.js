@@ -1,5 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Button, Platform, Text, View, StyleSheet } from "react-native";
+import MapView, { Marker } from "react-native-maps";
+
+import {
+  Button,
+  Platform,
+  Text,
+  View,
+  StyleSheet,
+  Dimensions,
+} from "react-native";
 import Constants from "expo-constants";
 import * as Location from "expo-location";
 
@@ -33,14 +42,13 @@ export default function GetLocation() {
     text = JSON.stringify(location);
   }
 
+  // console.log(location.coords.latitude)
+
   return (
     <View style={styles.container}>
+      {/* <MapView style={styles.map} region={location.coords}></MapView> */}
       <Text style={styles.paragraph}>{text}</Text>
       <Text style={styles.paragraph}>Location</Text>
-      <Button
-        title="hellso"
-        onPress={() => Alert.alert("Button with adjusted color pressed")}
-      />
     </View>
   );
 }

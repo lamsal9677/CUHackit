@@ -1,24 +1,35 @@
-import GetLocation from "./src/GetLocation";
+import Page1 from "./src/components/Page1";
+import Page2 from "./src/components/Page2";
 import React from "react";
-import { Alert, Button, View, StyleSheet, SafeAreaView } from "react-native";
+import { View, StyleSheet } from "react-native";
 
-export default function App() {
-  return (
-    <SafeAreaView style={styles.container}>
-      <Button
-        title="hellso"
-        onPress={() => Alert.alert("Button with adjusted color pressed")}
-      />
-      <GetLocation />
-      <GetLocation />
-    </SafeAreaView>
-  );
+export default class App extends React.Component {
+  state = {
+    page: 1,
+  };
+
+  pickPageToRender = () => {
+    if (this.state.page === 1) {
+      return (
+        <Page1 pageChange={(pageNum) => this.setState({ page: pageNum })} />
+      );
+    }
+    if (this.state.page === 2) {
+      return (
+        <Page2 pageChange={(pageNum) => this.setState({ page: pageNum })} />
+      );
+    }
+  };
+
+  render() {
+    return <View style={styles.container}>{this.pickPageToRender()}</View>;
+  }
 }
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#fff",
+    backgroundColor: "#000",
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    // alignItems: "center",
+    // justifyContent: "center",
   },
 });
