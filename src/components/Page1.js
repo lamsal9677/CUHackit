@@ -36,6 +36,10 @@ export default class Page1 extends React.Component {
           }}
         >
           <GetLocation style={{}} />
+          <Button
+            title="Go to page 2"
+            onPress={() => this.props.pageChange(2)}
+          />
         </View>
         <View
           style={{
@@ -46,8 +50,6 @@ export default class Page1 extends React.Component {
         >
           <Reported style={{}} />
         </View>
-        {/* <GetLocation style={styles.Loc} />
-      <Reported style={styles.Rep} /> */}
       </SafeAreaView>
     );
   }
