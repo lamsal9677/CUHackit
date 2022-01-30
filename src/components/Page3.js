@@ -7,10 +7,9 @@ import {
   SafeAreaView,
   Button,
 } from "react-native";
-import GetLocation from "../GetLocation";
-import Reported from "../Reported";
+import Constants from "expo-constants";
 
-export default class Page1 extends React.Component {
+export default class Page2 extends React.Component {
   render() {
     return (
       <SafeAreaView style={styles.container}>
@@ -23,8 +22,8 @@ export default class Page1 extends React.Component {
           }}
         >
           <Button
-            title="Go to page 2"
-            onPress={() => this.props.pageChange(2)}
+            title="Go to page 1"
+            onPress={() => this.props.pageChange(1)}
           />
         </View>
 
@@ -34,18 +33,14 @@ export default class Page1 extends React.Component {
             flex: 1,
             alignItems: "center",
           }}
-        >
-          <GetLocation style={{}} />
-        </View>
+        ></View>
         <View
           style={{
             backgroundColor: "blue",
             flex: 1,
             alignItems: "center",
           }}
-        >
-          <Reported style={{}} />
-        </View>
+        ></View>
         {/* <GetLocation style={styles.Loc} />
       <Reported style={styles.Rep} /> */}
       </SafeAreaView>
